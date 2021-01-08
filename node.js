@@ -18,11 +18,19 @@
 const EventEmitter = require("events")
 // create new instance of EventEmitter
 const emitter = new EventEmitter()
-// let handle the event that is raise
-emitter.on("EmailMessages Sends",()=>{
-    console.log("I am listening to the emailMessage Sends!")
+// let handle the event that is raise or emit
+emitter.on("EmailMessages Sends",(arg)=>{
+    console.log("I am listening to the emailMessage Sends!", arg)
 })
+// Create object to emit
+const objConfig = {
+  id: 1,
+  firstname: "John",
+  lastname: "steven"
+
+}
 // let emit or raise event
-emitter.emit("EmailMessages Sends")
+emitter.emit("EmailMessages Sends",objConfig)
+
 
 
