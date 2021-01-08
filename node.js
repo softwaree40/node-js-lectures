@@ -1,20 +1,20 @@
-// const os = require("os")
-// let totalMemory = os.totalmem()
-// let freeMemory = os.freemem
-// console.log(`This is Total Memory: ${totalMemory}`)
-// console.log(`This is Free Memory: ${freeMemory}`)
-// // create files system with node
+const os = require("os")
+let totalMemory = os.totalmem()
+let freeMemory = os.freemem
+console.log(`This is Total Memory: ${totalMemory}`)
+console.log(`This is Free Memory: ${freeMemory}`)
+// create files system with node
 
-// const fs = require("fs")
-// fs.readdir("./",(errors,files)=>{
-//    if(errors){
-//      console.log(errors)
-//    }else{
-//        console.log("I am files",files)
-//    }
-// })
-// Event in node
-// This is a class EventEmitter
+const fs = require("fs")
+fs.readdir("./",(errors,files)=>{
+   if(errors){
+     console.log(errors)
+   }else{
+       console.log("I am files",files)
+   }
+})
+Event in node
+//This is a class EventEmitter
 const EventEmitter = require("events")
 // create new instance of EventEmitter
 const emitter = new EventEmitter()
@@ -31,6 +31,14 @@ const objConfig = {
 }
 // let emit or raise event
 emitter.emit("EmailMessages Sends",objConfig)
+//raise event loggin also send message data of "i am login to the server"
 
+const EventEmitter = require("events")
 
+const emitter = new EventEmitter()
+emitter.on("Loggin",(arg)=>{
+   console.log("Event that was emit",arg)
+})
+
+emitter.emit("Loggin",{data: "I am login to the server"} )
 
